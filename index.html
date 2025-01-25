@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Courses</title>
+    
+    <style>
+        /* Reset and Basic Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            scroll-behavior: smooth;
+            overflow: visible /* Disable default scrolling */
+            
+        
+        }
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            background-color: #161b22;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #c9d1d9;
+            font-size: 18px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #58a6ff;
+        }
+
+        .navbar a.active::after,
+        .navbar a:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background-color: #58a6ff;
+            border-radius: 2px;
+            border-style:unset;
+        }
+
+        /* Section Styles */
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+            padding: 20px;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-snap-type: y mandatory;
+        }
+
+        /* Slideshow Section */
+        .slideshow-container {
+            display: flex;
+            overflow: hidden;
+            width: 90%;
+            height: 50%;
+            border-radius: 10px;
+            border: 2px solid #30363d;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            flex-shrink: 0;
+            animation: slide 8s infinite;
+        }
+
+        @keyframes slide {
+            0%, 20% { transform: translateX(0); }
+            25%, 45% { transform: translateX(-100%); }
+            50%, 70% { transform: translateX(-200%); }
+            75%, 100% { transform: translateX(0); }
+        }
+
+        /* Form and Button Styles */
+        form input, form button {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #30363d;
+            border-radius: 5px;
+            background-color: #161b22;
+            color: #c9d1d9;
+            font-size: 1rem;
+        }
+
+        form button:hover {
+            background-color: #58a6ff;
+            color: #fff;
+        }
+
+        /* Adaptive Styles */
+        @media (max-width: 768px) {
+            .logo img {
+                height: 60px;
+            }
+
+            .navbar ul {
+                gap: 15px;
+            }
+
+            .navbar a {
+                font-size: 16px;
+            }
+
+            .slideshow-container {
+                height: 40%;
+            }
+        }
+
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .courses, .features {
+            flex: 1;
+        }
+        .courses {
+            border-right: 2px solid #ddd;
+            padding-right: 20px;
+        }
+        .features {
+            padding-left: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="Organization Logo">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home" class="nav-link">HOME</a></li><li>|</li>
+                <li><a href="#about-us" class="nav-link">ABOUT US</a></li><li>|</li>
+                <li><a href="#courses" class="nav-link">COURSES</a></li><li>|</li>
+                <li><a href="#registration" class="nav-link">REGISTRATION</a></li><li>|</li>
+                <li><a href="#contact-us" class="nav-link">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Slideshow Section -->
+    <section id="home" class="slideshow">
+        <div class="slideshow-container">
+            <img src="assets/images/course1.jpg" alt="Course 1">
+            <img src="assets/images/course2.jpg" alt="Course 2">
+            <img src="assets/images/course3.jpg" alt="Course 3">
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us">
+        <h1>Welcome to CRYSOL ACADEMY.</h1>
+        <pre style="font-size: 20px;">             
+            Crysol Academy is a training initiative from Crystal Solutions;
+            this initiative was a result of a massive gap in the availability of 
+            skilled resources to cater to technology projects.
+
+            With more than 25 years in the IT Industry, we have more than 100 clients
+            which require trained manpower. 
+            Crysol Academy and our client design training programs so that they can
+            get jobs with the clients immediately after training. All our training programs
+            are short and speific to the technical skills as per client requirement. 
+            Get trained from the Industry itself and not by a Training Institution.
+        </pre>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <h1>Courses We Offer.</h1>
+        <div class="container">
+            <!-- Courses Offered Section -->
+            <div class="courses">
+                <h3>IT Support Engineer</h3>
+                <p>Start your career as IT Support Engineer which will lead to IT Manager/Head in next 6-7 Years.</p>
+                <ul>
+                    <li>Basic Hardware</li>
+                    <li>Networking</li>
+                    <li>Operating Systems</li>
+                    <li>e-Mail Solution, Configuration, Protocol</li>
+                    <li>Proxy</li>
+                    <li>Anti-virus</li>
+                    <li>Firewall</li>
+                    <li>On site experience</li>
+                </ul>
+    
+                <h3>Course Duration</h3>
+                <ul>
+                    <li>45 days Course duration</li>
+                    <li>3 hours Training</li>
+                </ul>
+            </div>
+    
+            <!-- Key Features Section -->
+            <div class="features">
+                <h3>Key Features</h3>
+                <ul>
+                    <li>National Placement Network.</li>
+                    <li>Time tested course material.</li>
+                    <li>Value added training with practical approach.</li>
+                    <li>Practical Teaching Methodology.</li>
+                    <li>Individuals nurtured with utmost care and dedication.</li>
+                    <li>Workshops and seminars at regular intervals.</li>
+                    <li>Grooming sessions conducted by eminent professionals.</li>
+                    <li>Complete Career Guidance which can boost up your Caliber in IT field.</li>
+                </ul>
+    
+                <h3>Training Content</h3>
+                <p>Training content is based on the experience collated by us over the years.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration">
+        <h2>Register Now</h2>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="number" placeholder="Phone Number" required>
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us">
+        <h2>Contact Us</h2>
+        <p>Email: support@techcourses.com | Phone: +1234567890</p>
+    </section>
+
+    <script>
+        // Highlight current section in the navbar
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
